@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en"><head><title>makihack.club</title>
+<meta content="makihack" property="og:title">
+<meta content="! THEY SAID IT COULDN'T BE DONE !" property="og:description">
+<meta content="https://makihack.club" property="og:url">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<meta content="#8080FF" data-react-helmet="true" name="theme-color">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atmosphere.wtf</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+<!-- CLICK TO ENTER SPLASH -->
+<div id="splash" style="
+    position: fixed;
+    inset: 0;
+    background: black;
+    color: #8080FF;
+    font-family: monospace;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: opacity 1.5s ease;
+">
+    CLICK TO ENTER (IF YOU DARE...)
+</div>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bgMusic" loop>
+    <source src="bossi_bossi_bossi.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    const splash = document.getElementById('splash');
+    const mainContent = document.body; // entire page fades in
+    const music = document.getElementById('bgMusic');
+
+    // Initially hide main content visually
+    mainContent.style.opacity = '1';
+    mainContent.style.transition = 'opacity 2s ease';
+
+    splash.addEventListener('click', () => {
+        // Play music after user click (autoplay allowed)
+        music.play().catch(() => {});
+
+        // Fade out splash
+        splash.style.opacity = '0';
+        splash.style.pointerEvents = 'none';
+
+        // Fade in main page
+        setTimeout(() => {
+            mainContent.style.opacity = '1';
+        }, 300);
+    });
+</script>
+
+</head>
+<body>
+    <marquee>
+        <p id="news">BREAKING NEWS: MAKI HAUNTS THE STREETS</p>
+    </marquee>
+
+    <div id="about" class="box">
+        <p id="title" class="box-title accent" onclick="alert('BOSSI BOSSI BOSSI...')">
+            makihack 
+        </p>
+
+        <div class="box-content">
+            <p>
+                we carry the tale of maki... - team makipeek<br>
+                beats skeet, neverlose, everyone
+            </p>
+
+            <div id="links">
+                <a href="https://teammakipeek.mysellauth.com/product/makihack">buy license</a>
+                <a href="https://teammakipeek.mysellauth.com/product/donation">donate</a>
+                <a href="https://pastebin.com/raw/7sJKUHrF">lore</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body></html>
